@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.geometry.Insets?>
+	
+<VBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SampleController" spacing="20">
+	<!-- TODO Add Nodes -->
+	<padding>
+	<Insets top="20" bottom="20" left="20" right="20" />
+	</padding>
+	
+	
+	<HBox spacing="20">
+	<Label > Model</Label>
+	<TextField fx:id="model" /> 
+	</HBox>
+	
+	<HBox  spacing="20">
+<Label >Type</Label>
+<RadioButton text="Gamer" fx:id="gamer" >
+<toggleGroup> 
+<ToggleGroup fx:id="type" ></ToggleGroup>
+</toggleGroup>
+</RadioButton>	
+<RadioButton text="pro" toggleGroup="$type" fx:id="pro" > </RadioButton>
+<RadioButton text="normal"  toggleGroup="$type"  fx:id="normal" > </RadioButton>	
+	</HBox>
+	
+	
+	<HBox spacing="20">
+	<Label >Frequance ecran</Label>
+	<ComboBox fx:id="hz" editable="true"  promptText="choisir"/> 
+	</HBox>
+	<HBox spacing="20"> 
+	<Label  > Cadeaux</Label>
+	
+<CheckBox text="sac"  fx:id="sac"></CheckBox>
+<CheckBox text="clavier"  fx:id="clavier"></CheckBox>
+<CheckBox text="sourie"  fx:id="sourie"></CheckBox>
+	</HBox>
+	<HBox spacing="20">
+	<Label > client</Label>
+	<TextField fx:id="nom" ></TextField>
+	<TextField fx:id="prenom" ></TextField>
+	</HBox>
+	
+	
+	<HBox spacing="20">
+	<Button text="ajouter" onAction="#add" >
+	</Button>
+	<Button text="supprimer" onAction="#drop" >
+	</Button>
+	 </HBox> 
+	<HBox spacing="20">
+	
+	<TableView fx:id="tv" >
+	
+	<columns>
+	<TableColumn text="nom" >
+	<cellValueFactory>
+	<PropertyValueFactory property="nom" ></PropertyValueFactory>
+	</cellValueFactory>
+	</TableColumn>
+	
+	<TableColumn text="prenom" >
+	<cellValueFactory>
+	<PropertyValueFactory property="prenom" ></PropertyValueFactory>
+	</cellValueFactory>
+	</TableColumn>
+	</columns>	
+	</TableView>
+		
+		<ListView fx:id="l2">
+		
+		</ListView>
+	</HBox>
+	
+</VBox>
